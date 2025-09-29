@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Simple</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Header simple -->
+    <header class="bg-white shadow-md">
+      <div class="flex justify-between items-center p-4">
+        <!-- Logo -->
+        <div class="text-xl font-bold">Mi Sitio</div>
+
+        <!-- Botón menú móvil -->
+        <button
+          id="menuBtn"
+          class="md:hidden bg-blue-500 text-white px-3 py-2 rounded"
+        >
+          Menú
+        </button>
+
+        <!-- Navegación desktop -->
+        <nav class="hidden md:flex gap-6">
+          <a href="#inicio" class="hover:text-blue-600">Inicio</a>
+          <a href="#servicios" class="hover:text-blue-600">Servicios</a>
+          <a href="#contacto" class="hover:text-blue-600">Contacto</a>
+        </nav>
+      </div>
+
+      <!-- Navegación móvil -->
+      <nav id="navMenu" class="hidden md:hidden bg-gray-50 p-4">
+        <a href="#inicio" class="block py-2 hover:text-blue-600">Inicio</a>
+        <a href="#servicios" class="block py-2 hover:text-blue-600"
+          >Servicios</a
+        >
+        <a href="#contacto" class="block py-2 hover:text-blue-600">Contacto</a>
+      </nav>
+    </header>
+
+    <!-- Contenido -->
+    <section id="inicio" class="h-screen bg-blue-50 p-10">
+      <h1 class="text-3xl font-bold">Sección Inicio</h1>
+    </section>
+
+    <section id="servicios" class="h-screen bg-green-50 p-10">
+      <h1 class="text-3xl font-bold">Sección Servicios</h1>
+    </section>
+
+    <section id="contacto" class="h-screen bg-yellow-50 p-10">
+      <h1 class="text-3xl font-bold">Sección Contacto</h1>
+    </section>
+
+    <script type="module" src="/src/test.ts"></script>
+  </body>
+</html>
