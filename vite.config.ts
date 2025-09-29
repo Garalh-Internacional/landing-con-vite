@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import tailwindcss from "@tailwindcss/vite";
+import { resolve } from "path";
 
 export default defineConfig({
   plugins: [tailwindcss()],
@@ -7,4 +8,13 @@ export default defineConfig({
     process.env.NODE_ENV === "production" && process.env.GITHUB_REPOSITORY
       ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}/`
       : "/",
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        test: resolve(__dirname, "test.html"),
+        complex: resolve(__dirname, "index_complex.html"),
+      },
+    },
+  },
 });
