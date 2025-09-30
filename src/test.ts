@@ -43,3 +43,45 @@ cards.forEach((card, i) => {
     card.classList.remove("opacity-0");
   }, i * 750);
 });
+
+// 5. VALIDACIÓN FORMULARIO DE CONTACTO
+const contactForm = document.getElementById("contactForm") as HTMLFormElement;
+if (contactForm) {
+  contactForm.addEventListener("submit", (e: Event) => {
+    e.preventDefault();
+
+    const nombre = (
+      document.getElementById("nombre") as HTMLInputElement
+    ).value.trim();
+    const email = (
+      document.getElementById("email") as HTMLInputElement
+    ).value.trim();
+    const mensaje = (
+      document.getElementById("mensaje") as HTMLTextAreaElement
+    ).value.trim();
+    const status = document.getElementById("status");
+
+    // Validaciones básicas
+    if (!nombre || !email || !mensaje) {
+      alert("Por favor completa todos los campos");
+      return;
+    }
+
+    if (!email.includes(".")) {
+      alert("Correo inválido");
+      return;
+    }
+
+    // Mostrar mensaje de éxito
+    if (status) {
+      status.classList.remove("hidden");
+      // Limpiar formulario
+      contactForm.reset();
+
+      // Ocultar mensaje después de 3 segundos
+      setTimeout(() => {
+        status.classList.add("hidden");
+      }, 3000);
+    }
+  });
+}
