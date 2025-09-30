@@ -8,7 +8,7 @@
   </head>
   <body>
     <!-- Header simple -->
-    <header class="bg-white shadow-md">
+    <header class="bg-white shadow-md sticky top-0 z-50">
       <div class="flex justify-between items-center p-4">
         <!-- Logo -->
         <div class="text-xl font-bold">Mi Sitio</div>
@@ -23,6 +23,7 @@
 
         <!-- Navegación desktop -->
         <nav class="hidden md:flex gap-6">
+          <a href="/" class="hover:text-blue-600">← Volver</a>
           <a href="#inicio" class="hover:text-blue-600">Inicio</a>
           <a href="#servicios" class="hover:text-blue-600">Servicios</a>
           <a href="#contacto" class="hover:text-blue-600">Contacto</a>
@@ -31,25 +32,41 @@
 
       <!-- Navegación móvil -->
       <nav id="navMenu" class="hidden md:hidden bg-gray-50 p-4">
+        <a href="/" class="block py-2 hover:text-blue-600">← Volver al inicio</a>
         <a href="#inicio" class="block py-2 hover:text-blue-600">Inicio</a>
-        <a href="#servicios" class="block py-2 hover:text-blue-600"
-          >Servicios</a
-        >
+        <a href="#servicios" class="block py-2 hover:text-blue-600">Servicios</a>
         <a href="#contacto" class="block py-2 hover:text-blue-600">Contacto</a>
       </nav>
     </header>
 
     <!-- Contenido -->
-    <section id="inicio" class="h-screen bg-blue-50 p-10">
-      <h1 class="text-3xl font-bold">Sección Inicio</h1>
+    <section id="inicio" class="py-48 bg-blue-50 p-10">
+      <h1 class="text-3xl font-bold mb-4">Sección Inicio</h1>
+      <p class="text-gray-700 text-lg">Bienvenido a nuestra página de demostración con navegación suave y animaciones.</p>
     </section>
 
-    <section id="servicios" class="h-screen bg-green-50 p-10">
-      <h1 class="text-3xl font-bold">Sección Servicios</h1>
+
+    <section id="servicios" class="p-8 py-16 bg-gray-50">
+      <h2 class="text-2xl font-bold mb-6">Nuestros servicios</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 shadow rounded transition transform hover:scale-105 hover:shadow-xl opacity-0 fade-in">
+          <h3 class="text-lg font-semibold mb-2">Servicio 1</h3>
+          <p class="text-gray-600">Descripción del primer servicio que ofrecemos.</p>
+        </div>
+        <div class="bg-white p-6 shadow rounded transition transform hover:scale-105 hover:shadow-xl opacity-0 fade-in">
+          <h3 class="text-lg font-semibold mb-2">Servicio 2</h3>
+          <p class="text-gray-600">Descripción del segundo servicio disponible.</p>
+        </div>
+        <div class="bg-white p-6 shadow rounded transition transform hover:scale-105 hover:shadow-xl opacity-0 fade-in">
+          <h3 class="text-lg font-semibold mb-2">Servicio 3</h3>
+          <p class="text-gray-600">Descripción del tercer servicio que proporcionamos.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="contacto" class="h-screen bg-yellow-50 p-10">
-      <h1 class="text-3xl font-bold">Sección Contacto</h1>
+    <section id="contacto" class="py-48 bg-yellow-50 p-10">
+      <h1 class="text-3xl font-bold mb-4">Sección Contacto</h1>
+      <p class="text-gray-700 text-lg">Ponte en contacto con nosotros para más información sobre nuestros servicios.</p>
     </section>
 
     <script type="module" src="/src/test.ts"></script>

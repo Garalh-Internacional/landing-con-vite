@@ -26,3 +26,20 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+
+// 3. CERRAR MENÚ MÓVIL AL HACER CLICK EN ENLACES EXTERNOS
+document.querySelectorAll('nav a:not([href^="#"])').forEach((anchor) => {
+  anchor.addEventListener("click", function () {
+    if (nav) {
+      nav.classList.add("hidden");
+    }
+  });
+});
+
+// 4. FADE-IN ANIMATION
+const cards = document.querySelectorAll(".fade-in");
+cards.forEach((card, i) => {
+  setTimeout(() => {
+    card.classList.remove("opacity-0");
+  }, i * 750);
+});
