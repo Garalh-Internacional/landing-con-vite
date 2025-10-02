@@ -8,6 +8,21 @@
 // Importa los estilos globales (incluye Tailwind) para que las clases utilitarias funcionen.
 import "./style.css";
 
+// Importa los íconos de Lucide como web components.
+import {
+  createIcons,
+  ArrowLeft,
+  Home,
+  LayoutDashboard,
+  Mail,
+  ArrowRight,
+  BarChart3,
+  ShieldCheck,
+  Zap,
+  User,
+  Send,
+} from "lucide";
+
 // 1. TOGGLE MENÚ MÓVIL
 // Referencias al botón del menú y al contenedor de enlaces móviles.
 const btn = document.getElementById("menuBtn");
@@ -123,3 +138,18 @@ if (contactForm) {
     }
   });
 }
+
+createIcons({
+  icons: {
+    ArrowLeft,
+    Home,
+    LayoutDashboard,
+    Mail,
+    ArrowRight,
+    BarChart3,
+    ShieldCheck,
+    Zap,
+    User,
+    Send,
+  },
+});

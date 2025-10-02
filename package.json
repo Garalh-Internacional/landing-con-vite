@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
-    "fontawesome-free": "^1.0.4",
-    "heroicons": "^2.2.0"
+    "lucide": "^0.544.0"
   }
 }
