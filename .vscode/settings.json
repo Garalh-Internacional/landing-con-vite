@@ -1,0 +1,7 @@
+{
+  // Silenciar advertencias del editor (VS Code) por reglas @ desconocidas
+  // como `@custom-variant` de Tailwind v4
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore"
+}

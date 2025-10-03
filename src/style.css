@@ -1,4 +1,11 @@
 @import "tailwindcss";
+/*
+  Tailwind v4: forzamos que el modo oscuro dependa de una clase `.dark` en <html>
+  en lugar de seguir la preferencia del sistema (prefers-color-scheme).
+  Con esto, todas las utilidades `dark:*` se aplican únicamente cuando
+  <html> tiene la clase `dark`, que alternamos con JavaScript.
+*/
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* Base styles for better defaults */
 * {
@@ -14,8 +21,18 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.6;
+}
+
+/* Light mode styles */
+html:not(.dark) body {
   color: #1f2937;
   background-color: #f9fafb;
+}
+
+/* Dark mode styles */
+html.dark body {
+  color: #f3f4f6;
+  background-color: #111827;
 }
 
 /* Custom animations */

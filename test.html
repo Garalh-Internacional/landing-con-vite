@@ -6,56 +6,104 @@
     <title>Menu Simple</title>
   </head>
   <body>
+    <!-- Demo 2: Modal -->
+    <div id="modal" class="fixed inset-0 items-center justify-center bg-black bg-opacity-50 hidden z-40">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded shadow-lg max-w-md mx-4">
+        <h2 class="text-xl font-bold mb-4 dark:text-white">Soy un modal</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-4"
+          >Este es un modal implementado con Tailwind CSS y JavaScript vanilla.</p
+        >
+        <button id="closeModal" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition"
+          >Cerrar</button
+        >
+      </div>
+    </div>
     <!-- Header simple -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
       <div class="flex justify-between items-center p-4">
         <!-- Logo -->
-        <div class="text-xl font-bold">Mi Sitio</div>
+        <div class="text-xl font-bold dark:text-white">Mi Sitio</div>
 
         <!-- Botón menú móvil -->
-        <button
-          id="menuBtn"
-          class="md:hidden bg-blue-500 text-white px-3 py-2 rounded"
-        >
-          Menú
-        </button>
+        <button id="menuBtn" class="md:hidden bg-blue-500 text-white px-3 py-2 rounded"> Menú </button>
 
         <!-- Navegación desktop -->
         <nav class="hidden md:flex gap-6">
-          <a href="/" class="hover:text-blue-600 flex items-center gap-1">
+          <a href="/" class="hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 flex items-center gap-1">
             <i data-lucide="arrow-left" class="h-4 w-4"></i>
             Volver
           </a>
-          <a href="#inicio" class="hover:text-blue-600 flex items-center gap-1">
+          <a
+            href="#inicio"
+            class="hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 flex items-center gap-1"
+          >
             <i data-lucide="home" class="h-4 w-4"></i>
             Inicio
           </a>
-          <a href="#servicios" class="hover:text-blue-600 flex items-center gap-1">
+          <a
+            href="#servicios"
+            class="hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 flex items-center gap-1"
+          >
             <i data-lucide="layout-dashboard" class="h-4 w-4"></i>
             Servicios
           </a>
-          <a href="#contacto" class="hover:text-blue-600 flex items-center gap-1">
+          <a
+            href="#contacto"
+            class="hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 flex items-center gap-1"
+          >
             <i data-lucide="mail" class="h-4 w-4"></i>
             Contacto
           </a>
         </nav>
       </div>
 
+      <!-- Fixed Position Controls -->
+      <!-- Dark Mode Toggle - Left Side -->
+      <div class="fixed bottom-20 right-6 z-50">
+        <button
+          id="darkToggle"
+          class="p-3 border rounded-full bg-white dark:bg-gray-800 dark:text-white shadow-lg transition hover:scale-110"
+          ><i data-lucide="moon-star" class="h-4 w-4"></i
+        ></button>
+      </div>
+
+      <!-- Scroll to Top - Right Side -->
+      <div class="fixed bottom-6 right-6 z-50">
+        <button
+          id="scrollToTop"
+          class="p-3 border rounded-full bg-blue-600 text-white shadow-lg transition hover:scale-110 hover:bg-blue-700 opacity-0 invisible"
+          title="Volver al inicio"
+          ><i data-lucide="chevron-up" class="h-4 w-4"></i
+        ></button>
+      </div>
+
       <!-- Navegación móvil -->
-      <nav id="navMenu" class="hidden md:hidden bg-gray-50 p-4">
-        <a href="/" class="flex items-center gap-2 py-2 hover:text-blue-600">
+      <nav id="navMenu" class="hidden md:hidden bg-gray-50 dark:bg-gray-700 p-4">
+        <a
+          href="/"
+          class="flex items-center gap-2 py-2 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+        >
           <i data-lucide="arrow-left" class="h-4 w-4"></i>
           Volver al inicio
         </a>
-        <a href="#inicio" class="flex items-center gap-2 py-2 hover:text-blue-600">
+        <a
+          href="#inicio"
+          class="flex items-center gap-2 py-2 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+        >
           <i data-lucide="home" class="h-4 w-4"></i>
           Inicio
         </a>
-        <a href="#servicios" class="flex items-center gap-2 py-2 hover:text-blue-600">
+        <a
+          href="#servicios"
+          class="flex items-center gap-2 py-2 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+        >
           <i data-lucide="layout-dashboard" class="h-4 w-4"></i>
           Servicios
         </a>
-        <a href="#contacto" class="flex items-center gap-2 py-2 hover:text-blue-600">
+        <a
+          href="#contacto"
+          class="flex items-center gap-2 py-2 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+        >
           <i data-lucide="mail" class="h-4 w-4"></i>
           Contacto
         </a>
@@ -63,65 +111,149 @@
     </header>
 
     <!-- Contenido -->
-    <section id="inicio" class="h-screen flex flex-col justify-center items-center text-white bg-gradient-to-r from-blue-500 to-purple-600 p-10">
+    <section
+      id="inicio"
+      class="h-screen flex flex-col justify-center items-center text-white bg-gradient-to-r from-blue-500 to-purple-600 p-10"
+    >
       <h1 class="text-5xl font-bold mb-4 text-center">Bienvenidos</h1>
-      <p class="text-lg mt-4 text-center max-w-2xl">Landing con gradiente Tailwind - Demostración con navegación suave y animaciones.</p>
-      
+      <p class="text-lg mt-4 text-center max-w-2xl"
+        >Landing con gradiente Tailwind - Demostración con navegación suave y animaciones.</p
+      >
+
       <!-- Botón con icono -->
-      <div class="mt-8 flex items-center gap-2 bg-white bg-opacity-20 px-6 py-3 rounded-lg backdrop-blur-sm hover:bg-opacity-30 transition cursor-pointer">
+      <div
+        class="mt-8 flex items-center gap-2 bg-white bg-opacity-20 px-6 py-3 rounded-lg backdrop-blur-sm hover:bg-opacity-30 transition cursor-pointer"
+      >
         <i data-lucide="arrow-right" class="h-6 w-6 text-gray-800"></i>
         <span class="text-gray-800 font-semibold">Explorar Servicios</span>
       </div>
     </section>
 
-
-    <section id="servicios" class="p-8 py-16 bg-gradient-to-b from-gray-50 to-white">
-      <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Nuestros servicios</h2>
+    <section
+      id="servicios"
+      class="p-8 py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900"
+    >
+      <h2 class="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white">Nuestros servicios</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white p-6 shadow rounded transition transform hover:scale-105 hover:shadow-xl opacity-0 fade-in">
+        <div
+          class="bg-white dark:bg-gray-800 p-6 shadow rounded transition transform hover:scale-105 hover:shadow-xl opacity-0 fade-in"
+        >
           <div class="flex items-center gap-3 mb-4">
             <i data-lucide="bar-chart-3" class="h-8 w-8 text-blue-600"></i>
-            <h3 class="text-lg font-semibold text-gray-800">Analytics</h3>
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Analytics</h3>
           </div>
-          <p class="text-gray-600">Descripción del primer servicio con análisis de datos avanzado.</p>
+          <p class="text-gray-600 dark:text-gray-300"
+            >Descripción del primer servicio con análisis de datos avanzado.</p
+          >
         </div>
-        <div class="bg-white p-6 shadow rounded transition transform hover:scale-105 hover:shadow-xl opacity-0 fade-in">
+        <div
+          class="bg-white dark:bg-gray-800 p-6 shadow rounded transition transform hover:scale-105 hover:shadow-xl opacity-0 fade-in"
+        >
           <div class="flex items-center gap-3 mb-4">
             <i data-lucide="shield-check" class="h-8 w-8 text-green-600"></i>
-            <h3 class="text-lg font-semibold text-gray-800">Seguridad</h3>
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Seguridad</h3>
           </div>
-          <p class="text-gray-600">Solución de seguridad avanzada para proteger tus datos.</p>
+          <p class="text-gray-600 dark:text-gray-300">Solución de seguridad avanzada para proteger tus datos.</p>
         </div>
-        <div class="bg-white p-6 shadow rounded transition transform hover:scale-105 hover:shadow-xl opacity-0 fade-in">
+        <div
+          class="bg-white dark:bg-gray-800 p-6 shadow rounded transition transform hover:scale-105 hover:shadow-xl opacity-0 fade-in"
+        >
           <div class="flex items-center gap-3 mb-4">
             <i data-lucide="zap" class="h-8 w-8 text-purple-600"></i>
-            <h3 class="text-lg font-semibold text-gray-800">Rendimiento</h3>
+            <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Rendimiento</h3>
           </div>
-          <p class="text-gray-600">Optimización de rendimiento para máxima eficiencia.</p>
+          <p class="text-gray-600 dark:text-gray-300">Optimización de rendimiento para máxima eficiencia.</p>
         </div>
       </div>
     </section>
 
-    <section id="contacto" class="py-16 bg-gradient-to-tr from-yellow-50 via-orange-50 to-red-50 p-10">
-      <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">Sección Contacto</h1>
-      <p class="text-gray-700 text-lg mb-8 text-center">Ponte en contacto con nosotros para más información sobre nuestros servicios.</p>
-      
-      <form id="contactForm" class="max-w-md mx-auto bg-white p-6 shadow-lg rounded-lg space-y-4">
+    <section
+      id="contacto"
+      class="py-16 bg-gradient-to-tr from-yellow-50 via-orange-50 to-red-50 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900 p-10"
+    >
+      <h1 class="text-3xl font-bold mb-8 text-center text-gray-800 dark:text-white">Sección Contacto</h1>
+      <p class="text-gray-700 dark:text-gray-300 text-lg mb-8 text-center"
+        >Ponte en contacto con nosotros para más información sobre nuestros servicios.</p
+      >
+
+      <form id="contactForm" class="max-w-md mx-auto bg-white dark:bg-gray-800 p-6 shadow-lg rounded-lg space-y-4">
         <div class="relative">
           <i data-lucide="user" class="h-5 w-5 text-gray-400 absolute left-3 top-3"></i>
-          <input type="text" id="nombre" placeholder="Nombre" class="w-full border p-2 pl-10 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input
+            type="text"
+            id="nombre"
+            placeholder="Nombre"
+            class="w-full border dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2 pl-10 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
         </div>
         <div class="relative">
           <i data-lucide="mail" class="h-5 w-5 text-gray-400 absolute left-3 top-3"></i>
-          <input type="email" id="email" placeholder="Correo" class="w-full border p-2 pl-10 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input
+            type="email"
+            id="email"
+            placeholder="Correo"
+            class="w-full border dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2 pl-10 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
         </div>
-        <textarea id="mensaje" placeholder="Tu mensaje" rows="4" class="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-        <button type="submit" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded hover:from-blue-700 hover:to-purple-700 transition w-full flex items-center justify-center gap-2">
+        <textarea
+          id="mensaje"
+          placeholder="Tu mensaje"
+          rows="4"
+          class="w-full border dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        ></textarea>
+        <button
+          type="submit"
+          class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded hover:from-blue-700 hover:to-purple-700 transition w-full flex items-center justify-center gap-2"
+        >
           <i data-lucide="send" class="h-5 w-5"></i>
           Enviar
         </button>
       </form>
-  <p id="status" class="text-green-600 mt-4 opacity-0 transition-opacity duration-500 ease-in-out text-center font-semibold">Mensaje enviado correctamente!</p>
+      <p
+        id="status"
+        class="text-green-600 mt-4 opacity-0 transition-opacity duration-500 ease-in-out text-center font-semibold"
+        >Mensaje enviado correctamente!</p
+      >
+    </section>
+
+    <!-- Demo Section -->
+    <section class="py-16 bg-gray-100 dark:bg-gray-900">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center text-gray-800 dark:text-white">Demos Interactivos</h2>
+
+        <!-- Demo 2: Modal Button -->
+        <div class="mb-12 text-center">
+          <h3 class="text-xl font-semibold mb-4 text-gray-700 dark:text-gray-300">Demo 2: Modal Simple</h3>
+          <button id="openModal" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition shadow-lg"
+            >Abrir Modal</button
+          >
+        </div>
+
+        <!-- Demo 3: Carousel -->
+        <div class="mb-8 text-center">
+          <h3 class="text-xl font-semibold mb-4 text-gray-700 dark:text-gray-300">Demo 3: Carrusel Básico</h3>
+          <div class="relative w-80 mx-auto bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+            <div
+              id="carouselImage"
+              class="w-full h-48 flex items-center justify-center text-4xl font-bold bg-gradient-to-br from-blue-400 to-purple-500 text-white"
+              >Imagen 1</div
+            >
+            <div class="flex justify-between absolute inset-0 items-center px-2">
+              <button
+                id="prev"
+                class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white px-3 py-2 rounded-full shadow hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                >⬅</button
+              >
+              <button
+                id="next"
+                class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white px-3 py-2 rounded-full shadow hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                >➡</button
+              >
+            </div>
+            <div id="dots" class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <script type="module" src="/src/test.ts"></script>
