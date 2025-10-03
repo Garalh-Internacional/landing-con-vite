@@ -223,6 +223,7 @@ const carouselData = [
   { content: "Imagen 1", gradient: "from-blue-400 to-purple-500" },
   // Ejemplo: descomenta y reemplaza por tu imagen
   // { imageSrc: "/images/slide1.jpg", alt: "Descripción de la imagen 1" },
+  //{imageSrc: "https://www.touchtapplay.com/wp-content/uploads/2021/04/among-us-everything-to-know-about-the-red-crewmate-1.jpg",alt: "Red sus",},
   { content: "Imagen 2", gradient: "from-green-400 to-blue-500" },
   { content: "Imagen 3", gradient: "from-pink-400 to-red-500" },
 ];
